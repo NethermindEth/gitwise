@@ -1,0 +1,29 @@
+[package]
+name = "gitwise"
+version = "0.1.0"
+edition = "2021"
+authors = ["Your Name <your.email@example.com>"]
+description = "An intelligent Git history exploration and manipulation tool powered by AI"
+license = "MIT"
+
+[dependencies]
+anyhow = "1.0"
+async-openai = "0.17"
+anthropic = "0.0.8"
+dotenv = "0.15"
+git2 = "0.18"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1.0", features = ["full"] }
+clap = { version = "4.4", features = ["derive"] }
+ratatui = "0.24"
+crossterm = "0.27"
+thiserror = "1.0"
+tracing = "0.1"
+tracing-subscriber = "0.3"
+chrono = "0.4"
+
+[dev-dependencies]
+pretty_assertions = "1.4"
+tokio-test = "0.4"
+tempfile = "3.0"

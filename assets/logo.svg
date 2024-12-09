@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <!-- Gradient definitions -->
+    <defs>
+        <linearGradient id="circleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#2ecc71;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#27ae60;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="brainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.9" />
+            <stop offset="100%" style="stop-color:#f1f1f1;stop-opacity:0.9" />
+        </linearGradient>
+        <!-- Glow effect -->
+        <filter id="glow">
+            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+            <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+
+    <!-- Background circle with gradient -->
+    <circle cx="100" cy="100" r="90" fill="url(#circleGradient)" filter="url(#glow)" />
+    
+    <!-- Git graph structure -->
+    <g stroke="#fff" stroke-linecap="round" filter="url(#glow)">
+        <!-- Main branch -->
+        <path d="M100 160 L100 100" stroke-width="8" fill="none"/>
+        <path d="M100 100 L100 60" stroke-width="8" fill="none" stroke-dasharray="4,4"/>
+        
+        <!-- Side branches -->
+        <path d="M100 120 C130 120 130 90 100 90" stroke-width="6" fill="none"/>
+        <path d="M100 100 C70 100 70 70 100 70" stroke-width="6" fill="none"/>
+        
+        <!-- Brain-like curves -->
+        <g fill="none" stroke-width="4">
+            <path d="M60 50 C70 30 90 40 100 50 C110 60 130 50 140 40" />
+            <path d="M70 40 C80 20 100 30 110 40 C120 50 140 40 150 30" />
+            <path d="M50 60 C60 40 80 50 90 60 C100 70 120 60 130 50" />
+        </g>
+    </g>
+    
+    <!-- Connection nodes -->
+    <g fill="url(#brainGradient)" filter="url(#glow)">
+        <!-- Main branch nodes -->
+        <circle cx="100" cy="160" r="6"/>
+        <circle cx="100" cy="120" r="6"/>
+        <circle cx="100" cy="100" r="8"/>
+        <circle cx="100" cy="90" r="6"/>
+        <circle cx="100" cy="70" r="6"/>
+        <circle cx="100" cy="60" r="6"/>
+        
+        <!-- Branch endpoints -->
+        <circle cx="130" cy="90" r="5"/>
+        <circle cx="70" cy="70" r="5"/>
+    </g>
+    
+    <!-- Neural network connections -->
+    <g stroke="#fff" stroke-width="2" opacity="0.5">
+        <path d="M70 70 L130 90" stroke-dasharray="2,3"/>
+        <path d="M100 70 L130 90" stroke-dasharray="2,3"/>
+        <path d="M70 70 L100 90" stroke-dasharray="2,3"/>
+    </g>
+</svg>
